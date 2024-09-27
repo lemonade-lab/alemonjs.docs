@@ -32,10 +32,74 @@
 }
 
 /* HomepageHeader */
+
+@media screen and (max-width: 996px) {
+  .homeInfo {
+    flex-direction: column; /* 小屏幕下垂直排列 */
+    text-align: center; /* 文本居中 */
+  }
+  .homeTitle {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .homeText {
+    text-align: center; /* 确保文本在移动端居中 */
+    margin-bottom: 1rem; /* 调整底部边距 */
+  }
+
+  .homeButtons {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .homeImage {
+    width: 200px; /* 占据80%的宽度，保持在视觉上的整洁 */
+    height: auto; /* 高度自适应 */
+    margin: 0 !important; /* 统一上下间距，移除左右间距 */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* 根据需要定义更小的屏幕样式 */
+  .homeTitle {
+    font-size: 1.58rem !important; /* 在小屏幕上适当缩小标题大小 */
+  }
+
+  .homeActions {
+    flex-direction: column; /* 按钮在小屏幕上垂直排列 */
+    gap: 0.5rem; /* 按钮之间的间隙 */
+    max-width: 12em;
+    display: flex;
+    flex-direction: column; /* 按钮在小屏幕上垂直排列 */
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: center; /* 垂直居中 */
+    gap: 0.5rem; /* 按钮之间的间隙 */
+    margin: 0 auto; /* 居中容器 */
+    padding: 1rem 0; /* 添加上下内边距以增加可点击区域 */
+  }
+
+  .homeImage {
+    width: 150px !important; /* 占据80%的宽度，保持在视觉上的整洁 */
+    height: auto; /* 高度自适应 */
+    margin: 0 !important; /* 统一上下间距，移除左右间距 */
+  }
+
+  .homeDescription {
+    margin-bottom: 1rem !important;
+  }
+
+  .homeButtons {
+    font: 1em !important;
+  }
+}
+
 .homeInfoWrapper {
   padding: 2rem 0;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-inline: auto;
@@ -83,6 +147,10 @@
     color 0.3s ease;
 }
 
+.homeButtons {
+  display: flex;
+}
+
 .homeAction {
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -93,9 +161,11 @@
   background-color: #3a8eeb;
   color: white;
 }
+
 .primary:hover {
-  background-color: #2a6aeb; /* 悬停时背景颜色 */
+  background-color: #3f7bbf; /* 悬停时背景颜色 */
   color: white; /* 悬停时文字颜色保持可见 */
+  text-decoration: none;
 }
 
 .secondary {
