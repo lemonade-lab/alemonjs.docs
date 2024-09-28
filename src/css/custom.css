@@ -31,6 +31,12 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.footer__link-item,
+.navbar__item {
+  display: inline-flex; /* 行内 Flexbox */
+  align-items: center; /* 垂直居中对齐 */
+}
+
 /* serch input navbar */
 @media (max-width: 1183px) {
   .navbar__item {
@@ -38,8 +44,12 @@
   }
 }
 
-@media (max-width: 1063px) {
+@media (max-width: 1004px) {
   .navbar__search-input {
     width: 10em;
+  }
+  /* hide navbar items on mini screen */
+  .navbar__item {
+    display: none;
   }
 }
