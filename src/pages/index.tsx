@@ -22,12 +22,12 @@ const HomepageHeader = () => {
             {siteConfig.title}
           </Heading>
           <p className={styles.homeDescription}>{siteConfig.tagline}</p>
-          <div className={styles.homeButtons}>
-            <p className={styles.homeActions}>
-              <Link className={clsx(styles.homeAction, styles.primary)} to="docs/category/开发文档">
+          <div className={styles.homeButtonDiv}>
+            <p className={styles.homeButtons}>
+              <Link className={clsx(styles.homeButton, styles.primary)} to="docs/category/开发文档">
                 💡 开发文档
               </Link>
-              <Link className={clsx(styles.homeAction, styles.secondary)} to="docs/intro">
+              <Link className={clsx(styles.homeButton, styles.secondary)} to="docs/intro">
                 ℹ️ 介绍
               </Link>
             </p>

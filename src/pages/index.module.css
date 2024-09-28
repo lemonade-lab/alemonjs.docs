@@ -31,7 +31,9 @@
   justify-content: center;
 }
 
-/* HomepageHeader */
+/**
+ * HomepageHeader 
+ */
 
 @media screen and (max-width: 996px) {
   .homeInfo {
@@ -48,31 +50,35 @@
     margin-bottom: 1rem; /* 调整底部边距 */
   }
 
-  .homeButtons {
+  .homeButtonDiv {
     display: flex;
     margin: 0 auto;
     justify-content: center;
   }
 
   .homeImage {
-    width: 200px; /* 占据80%的宽度，保持在视觉上的整洁 */
+    width: 200px; /* 调整宽度 */
     height: auto; /* 高度自适应 */
     margin: 0 !important; /* 统一上下间距，移除左右间距 */
   }
 }
 
+/** 移动端样式 */
 @media screen and (max-width: 600px) {
-  /* 根据需要定义更小的屏幕样式 */
   .homeTitle {
     font-size: 1.58rem !important; /* 在小屏幕上适当缩小标题大小 */
   }
 
-  .homeActions {
+  .homeText {
+    text-align: center; /* 确保文本在移动端居中 */
+    margin-bottom: 0rem !important; /* 调整底部边距 */
+  }
+
+  .homeButtons {
     flex-direction: column; /* 按钮在小屏幕上垂直排列 */
     gap: 0.5rem; /* 按钮之间的间隙 */
     max-width: 12em;
     display: flex;
-    flex-direction: column; /* 按钮在小屏幕上垂直排列 */
     align-items: center; /* 垂直居中对齐 */
     justify-content: center; /* 垂直居中 */
     gap: 0.5rem; /* 按钮之间的间隙 */
@@ -81,7 +87,7 @@
   }
 
   .homeImage {
-    width: 150px !important; /* 占据80%的宽度，保持在视觉上的整洁 */
+    width: 150px !important;
     height: auto; /* 高度自适应 */
     margin: 0 !important; /* 统一上下间距，移除左右间距 */
   }
@@ -90,13 +96,17 @@
     margin-bottom: 1rem !important;
   }
 
-  .homeButtons {
+  .homeButtonDiv {
     font: 1em !important;
+  }
+
+  .homeInfo {
+    user-select: none;
   }
 }
 
 .homeInfoWrapper {
-  padding: 2rem 0;
+  padding-top: 3em;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -120,7 +130,7 @@
 }
 
 .homeImage {
-  width: 270px; /* 根据需求调整大小 */
+  width: 270px;
   height: auto;
   margin: 1rem;
   margin-right: 30px;
@@ -136,7 +146,7 @@
   margin-bottom: 2rem; /* 保持与 Docusaurus 样式一致 */
 }
 
-.homeActions {
+.homeButtons {
   display: flex;
   gap: 1rem;
   padding: 0.5rem 1rem;
@@ -147,11 +157,11 @@
     color 0.3s ease;
 }
 
-.homeButtons {
+.homeButtonDiv {
   display: flex;
 }
 
-.homeAction {
+.homeButton {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   text-decoration: none;
