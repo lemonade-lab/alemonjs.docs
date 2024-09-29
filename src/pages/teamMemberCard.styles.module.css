@@ -48,6 +48,10 @@
   transition: opacity 0.4s ease-in-out; /* 平滑隐匿效果 */
 }
 
+.avatarBlur {
+  filter: blur(8px); /* 初始模糊效果 */
+}
+
 .memberInfo {
   display: flex;
   flex-direction: column;

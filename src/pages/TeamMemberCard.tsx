@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './teamMemberCard.styles.module.css'
 
 // 定义团队成员信息的类型
@@ -28,6 +28,24 @@ const teamMembers: TeamMember[] = [
     name: 'CCCdk',
     role: '前端',
     githubUrl: 'https://github.com/CCCdk'
+  },
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/59494182?v=4',
+    name: 'yyy-x',
+    role: '前端',
+    githubUrl: 'https://github.com/yyy-x'
+  },
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/116153548?v=4',
+    name: '悠风起',
+    role: 'node后端',
+    githubUrl: 'https://github.com/youwindy'
+  },
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/36975635?v=4',
+    name: 'f',
+    role: 'AI训练',
+    githubUrl: 'https://github.com/ywtll'
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/62873988?v=4',
@@ -64,21 +82,37 @@ const teamMembers: TeamMember[] = [
 const TeamMemberCard: React.FC = () => {
   return (
     <div className={styles.teamContainer}>
-      {teamMembers.map((member, index) => (
-        <a
-          key={index}
-          href={member.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.memberCard}
-        >
-          <img alt={member.name} src={member.avatar} className={styles.memberAvatar} />
-          <div className={styles.memberInfo}>
-            <h3>{member.name}</h3>
-            {member.role && <p>{member.role}</p>} {/* 只有当 role 存在时才渲染 p 元素 */}
-          </div>
-        </a>
-      ))}
+      {teamMembers.map((member, index) => {
+        const [loaded, setLoaded] = useState(false)
+        return (
+          <a
+            key={index}
+            href={member.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.memberCard}
+          >
+            <img
+              alt={member.name}
+              src={member.avatar}
+              className={`${styles.memberAvatar} ${
+                loaded
+                  ? e => {
+                      const target = e.currentTarget
+                      target.classList.remove(styles.avatarBlur) // 加载完成后去除模糊
+                    }
+                  : styles.avatarBlur
+              }`}
+              loading="lazy"
+              onLoad={() => setLoaded(true)}
+            />
+            <div className={styles.memberInfo}>
+              <h3>{member.name}</h3>
+              {member.role && <p>{member.role}</p>} {/* 只有当 role 存在时才渲染 p 元素 */}
+            </div>
+          </a>
+        )
+      })}
     </div>
   )
 }
