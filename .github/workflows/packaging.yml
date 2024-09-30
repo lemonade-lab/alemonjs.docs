@@ -13,37 +13,37 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: version 18
+      - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '18'
 
-      - name: set system time
+      - name: Set system time
         id: beijing_time
         run: echo "BEIJING_TIME=$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
 
-      - name: set team name
+      - name: Set team name
         id: team_name
         run: echo "TEAM_NAME='lemonade-lab'" >> $GITHUB_ENV
 
-      - name: set warehouse name
+      - name: Set warehouse name
         id: warehouse_name
         run: echo "WAREHOUSE_NAME='alemonjs-docs'" >> $GITHUB_ENV
 
-      - name: delete .npmrc
+      - name: Delete .npmrc
         run: |
           rm -rf .npmrc
 
-      - name: yarn
+      - name: Install Yarn
         run: npm install yarn@1.12.1 -g
 
-      - name: yarn install
+      - name: Yarn install
         run: yarn install --ignore-engines
 
-      - name: build
+      - name: Build
         run: yarn build
 
-      - name: push docs
+      - name: Push docs to GitHub
         run: |
           cd ./build
           git init
@@ -53,3 +53,12 @@ jobs:
           git commit -m "自动打包 - ${{ env.BEIJING_TIME }}"
           git remote add github https://${{ env.TEAM_NAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ env.TEAM_NAME }}/${{ env.WAREHOUSE_NAME }}.git
           git push github HEAD:docs -f
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to server
+        run: |
+          rsync -avz --delete --ignore-existing ./build/ root@192.144.211.155:/usr/local/nginx/alemonjs-docs/
