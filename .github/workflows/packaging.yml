@@ -53,7 +53,7 @@ jobs:
 
       - name: Deploy to server
         run: |
-          rsync -avz --delete --ignore-existing ./build/ ${{ secrets.SSH_SERVER_USER }}@${{ secrets.SSH_SERVER_IP }}:/usr/local/nginx/alemonjs-docs
+          rsync -avz --delete ./build/ ${{ secrets.SSH_SERVER_USER }}@${{ secrets.SSH_SERVER_IP }}:/usr/local/nginx/alemonjs-docs
 
       - name: Push docs to GitHub
         run: |
