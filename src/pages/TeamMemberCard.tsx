@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './teamMemberCard.styles.module.css'
 
 // 定义团队成员信息的类型
@@ -83,7 +83,6 @@ const TeamMemberCard: React.FC = () => {
   return (
     <div className={styles.teamContainer}>
       {teamMembers.map((member, index) => {
-        const [loaded, setLoaded] = useState(false)
         return (
           <a
             key={index}
@@ -95,16 +94,8 @@ const TeamMemberCard: React.FC = () => {
             <img
               alt={member.name}
               src={member.avatar}
-              className={`${styles.memberAvatar} ${
-                loaded
-                  ? e => {
-                      const target = e.currentTarget
-                      target.classList.remove(styles.avatarBlur) // 加载完成后去除模糊
-                    }
-                  : styles.avatarBlur
-              }`}
+              className={styles.memberAvatar}
               loading="lazy"
-              onLoad={() => setLoaded(true)}
             />
             <div className={styles.memberInfo}>
               <h3>{member.name}</h3>
