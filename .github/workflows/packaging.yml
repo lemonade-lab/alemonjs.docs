@@ -43,6 +43,15 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to server
+        run: |
+          rsync -avz --delete --ignore-existing ./build/ ${{ secrets.SSH_SERVER_CONFIG }}
+
       - name: Push docs to GitHub
         run: |
           cd ./build
@@ -53,12 +62,3 @@ jobs:
           git commit -m "自动打包 - ${{ env.BEIJING_TIME }}"
           git remote add github https://${{ env.TEAM_NAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ env.TEAM_NAME }}/${{ env.WAREHOUSE_NAME }}.git
           git push github HEAD:docs -f
-
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Deploy to server
-        run: |
-          rsync -avz --delete --ignore-existing ./build/ root@192.144.211.155:/usr/local/nginx/alemonjs-docs/
