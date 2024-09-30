@@ -46,6 +46,15 @@ jobs:
         run: |
           yarn build
 
+      - name: Install rsync
+        run: |
+          sudo apt-get update 
+          sudo apt-get install -y rsync
+
+      - name: Deploy to server
+        run: |
+          rsync -avz --delete --ignore-existing ./build/ ${{ secrets.SSH_SERVER_USER }}@${{ secrets.SSH_SERVER_IP }}:/usr/local/nginx/alemonjs-docs
+
       - name: Push docs to GitHub
         run: |
           cd ./build
@@ -56,18 +65,3 @@ jobs:
           git commit -m "自动打包 - ${{ env.BEIJING_TIME }}"
           git remote add github https://${{ env.TEAM_NAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ env.TEAM_NAME }}/${{ env.WAREHOUSE_NAME }}.git
           git push github HEAD:docs -f
-
-      - name: Switch to docs branch
-        run: |
-          git fetch origin docs
-          git checkout docs
-          git pull origin docs
-
-      - name: Install rsync
-        run: |
-          sudo apt-get update 
-          sudo apt-get install -y rsync
-
-      - name: Deploy to server
-        run: |
-          rsync -avz --delete --ignore-existing ./build/ ${{ secrets.SSH_SERVER_USER }}@${{ secrets.SSH_SERVER_IP }}:/usr/local/nginx/alemonjs-docs
