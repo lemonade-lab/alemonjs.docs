@@ -62,7 +62,7 @@ export default function Footer() {
                 <ul>
                   <div>
                     <span
-                      className=" text-white cursor-pointer"
+                      className=" text-white cursor-pointer hover:text-blue-400"
                       onClick={() => (window.location.href = '/docs/intro')}
                     >
                       简介
@@ -70,7 +70,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <span
-                      className=" text-white cursor-pointer"
+                      className=" text-white cursor-pointer hover:text-blue-400"
                       onClick={() => (window.location.href = '/docs/category/开发文档')}
                     >
                       开发文档
@@ -91,7 +91,7 @@ export default function Footer() {
                 <ul>
                   <div>
                     <span
-                      className=" text-white cursor-pointer"
+                      className=" text-white cursor-pointer hover:text-blue-400"
                       onClick={() => {
                         window.open('https://github.com/lemonade-lab/alemonjs', '_blank')
                       }}
@@ -101,7 +101,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <span
-                      className=" text-white cursor-pointer"
+                      className=" text-white cursor-pointer hover:text-blue-400"
                       onClick={() =>
                         window.open('https://github.com/lemonade-lab/chat-space', '_blank')
                       }
