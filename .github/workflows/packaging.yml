@@ -24,15 +24,21 @@ jobs:
           echo "TEAM_NAME='lemonade-lab'" >> $GITHUB_ENV
           echo "WAREHOUSE_NAME='alemonjs-docs'" >> $GITHUB_ENV
 
-      - name: Install dependencies and build
+      - name: Install dependencies
         run: |
           rm -rf .npmrc
           npm install yarn@1.12.1 -g
           yarn install --ignore-engines
+
+      - name: Build dependencies
+        run: |
           yarn build
 
       - name: Install rsync
-        run: sudo apt-get install -y rsync
+        run: |
+          sudo yum install -y rsync
+          which rsync
+          rsync --version
 
       - name: Configure SSH
         run: |
