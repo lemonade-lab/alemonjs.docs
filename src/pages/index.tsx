@@ -56,7 +56,7 @@ export default function Home(): JSX.Element {
           <Heading as="h1" className="text--center">
             我们的团队
           </Heading>
-          <div className={clsx(styles.memberCards)}>
+          <div className="container-max">
             <TeamMemberCard />
           </div>
         </div>
