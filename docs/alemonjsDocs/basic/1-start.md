@@ -33,12 +33,6 @@ cd alemonb
 npm install yarn@1.19.1 -g
 ```
 
-### 安装 ts 环境
-
-```shell
-yarn add tsx -D
-```
-
 ### 配置环境
 
 ```ts title="./tsconfig.json"
@@ -82,7 +76,7 @@ yarn add @alemonjs/kook
 </Tabs>
 
 ```shell
-npx tsx index.ts --input "./src/index.ts" --login "kook" --token "xxxx"
+npx alemonjs dev --input "./src/index.ts" --login "kook" --token "xxxx"
 ```
 
 --input 入口文件
@@ -101,11 +95,6 @@ kook:
     - '123456'
     - '654321'
 # kook end
-
-# pm2
-pm2:
-  name: 'kook'
-  script: 'alemonjs start --input ./lib/index.js --login kook'
 ```
 
 ## PM2
@@ -117,11 +106,10 @@ yarn add pm2 -D
 ```
 
 ```yaml title="alemon.config.yaml"
+# pm2
 pm2:
   name: 'kook'
-  script: 'npx tsx index.ts --login kook'
-  env:
-    NODE_ENV: 'production'
+  script: 'alemonjs start --input ./lib/index.js --login kook'
 ```
 
 ### 配置
