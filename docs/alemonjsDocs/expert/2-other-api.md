@@ -18,7 +18,7 @@ sidebar_position: 2
 
 - embed
 
-```js
+```js title="apps/**/*/res.ts"
 import { QQGroupBotAPI } from 'chat-space'
 const Client = new QQGroupBotAPI()
 const cards = [
@@ -44,7 +44,7 @@ const cards = [
 
 - emoji
 
-```js
+```js title="apps/**/*/res.ts"
 import { QQGroupBotAPI } from 'chat-space'
 const Client = new QQGroupBotAPI()
 ```

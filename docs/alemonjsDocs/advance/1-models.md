@@ -12,9 +12,9 @@ sidebar_position: 1
 
 ## 使用包
 
-- `alemon.config.yaml`
+定义apps变量，并添加包
 
-```yaml title="定义apps变量，并添加包名"
+```yaml title="lemon.config.yaml"
 apps:
   - '@alemonjs/xiuxian'
 ```
@@ -28,8 +28,8 @@ alemonjs 会根据配置去找对应的 package.json。
 ```shell title="目录结构"
 node_modules/                 // Node.js 依赖包
  ├── @alemonjs/               // AlemonJS 相关模块
- │    └── xixian/             // Xixian 模块
- │         ├── src/           // 源代码目录
+ │    └── xixian/             // xixian 模块
+ │         ├── lib/           // 源代码目录
  │         │    ├── apps/     // 开发应用
  │         │    └── index.ts  // 文件入口
  │         └── package.json   // 工程配置文件
@@ -38,18 +38,14 @@ node_modules/                 // Node.js 依赖包
 
 ## 配置
 
-- `.npmignore`
-
-```yaml
+```yaml title=".npmignore"
 # 依赖
 node_modules
 /*
 !/src
 ```
 
-- `package.json`
-
-```json
+```json title="package.json"
 {
   "name": "@alemonjs/xiuxian",
   "version": "0.0.1",
@@ -72,9 +68,7 @@ node_modules
 }
 ```
 
-- `src/index.ts`
-
-```js
+```js title="src/index.ts"
 import { defineChildren } from 'alemonjs'
 export default defineChildren(config => {
   console.log('config', config)

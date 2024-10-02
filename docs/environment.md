@@ -2,18 +2,20 @@
 sidebar_position: 2
 ---
 
-# 开发前准备
-
-## 准备环境
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+# 环境准备
 
 :::warning 注意事项
 
 进行开发之前，请准备好如下所需环境和平台账户。
 
+[QQ ](https://q.qq.com/#/)
+[KOOK ](https://developer.kookapp.cn/doc/)
+[DISCORD ](https://discord.com/developers/applications/)
+
 :::
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="q" label="Windows" default>
@@ -226,15 +228,5 @@ yum  install chromium -y
 
   </TabItem>
 </Tabs>
-
-## 准备平台账户
-
-请提前准备好开发对接的平台账户：
-
-- [QQ 开放平台](https://q.qq.com/#/)
-
-- [KOOK 平台](https://developer.kookapp.cn/doc/)
-
-- [DISCORD 平台](https://discord.com/developers/applications/)
 
 出现意外？阅读[常见问题](./x-other/3-common-problem.md)

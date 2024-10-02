@@ -6,28 +6,29 @@ sidebar_position: 1
 
 :::tip AlemonJS
 
-- [AlemonJS](https://github.com/lemonade-lab/alemonjs) ( 发音为 /əˈlemən/ )是事件驱动的跨平台开发框架
-- 基于 JavaScript 所构建，并提供了一系列快捷的接口和方法来实现业务逻辑。
+[AlemonJS](https://github.com/lemonade-lab/alemonjs) ( 发音为 /əˈlemən/ )是事件驱动的跨平台开发框架
 
 :::
 
-> 如果你是初学者。不用担心！理解教程和指南的内容只需要具备基础的 JavaScript 知识。
-
 ## Ecosystem
 
-| Project                  | Status                              | Description |
-| ------------------------ | ----------------------------------- | ----------- |
-| [alemonjs]               | [![alemonjs-s]][alemonjs-p]         | 核心处理包  |
-| [@alemonjs/kook]         | [![kook-s]][kook-p]                 | KOOK        |
-| [@alemonjs/discord]      | [![discord-s]][discord-p]           | Discord     |
-| [@alemonjs/qq-group-bot] | [![qq-group-bot-s]][qq-group-bot-p] | QQ 群       |
-| [@alemonjs/qq-guild-bot] | [![qq-guild-bot-s]][qq-guild-bot-p] | QQ 频道     |
-| [@alemonjs/qq]           | [![qq-s]][qq-p]                     | QQ          |
-| [@alemonjs/telegram]     | [![telegram-s]][telegram-p]         | telegram    |
+| Project                  | Status                              | Description    |
+| ------------------------ | ----------------------------------- | -------------- |
+| [alemonjs]               | [![alemonjs-s]][alemonjs-p]         | 标准应用解析器 |
+| [create-alemonjs]        | [![c-s]][c-p]                       | 脚手架         |
+| [@alemonjs/kook]         | [![kook-s]][kook-p]                 | KOOK 连接      |
+| [@alemonjs/discord]      | [![discord-s]][discord-p]           | DC 公会连接    |
+| [@alemonjs/qq-group-bot] | [![qq-group-bot-s]][qq-group-bot-p] | QQ 群连接      |
+| [@alemonjs/qq-guild-bot] | [![qq-guild-bot-s]][qq-guild-bot-p] | QQ 频道连接    |
+| [@alemonjs/qq]           | [![qq-s]][qq-p]                     | QQ 连接        |
+| [@alemonjs/telegram]     | [![telegram-s]][telegram-p]         | telegram 连接  |
 
 [alemonjs]: https://github.com/lemonade-lab/alemonjs/tree/main/packages/alemonjs
 [alemonjs-s]: https://img.shields.io/npm/v/alemonjs.svg
 [alemonjs-p]: https://www.npmjs.com/package/alemonjs
+[create-alemonjs]: https://github.com/lemonade-lab/alemonjs/tree/main/packages/create-alemonjs
+[c-s]: https://img.shields.io/npm/v/create-alemonjs.svg
+[c-p]: https://www.npmjs.com/package/create-alemonjs
 [@alemonjs/kook]: https://github.com/lemonade-lab/alemonjs/tree/main/packages/kook
 [kook-s]: https://img.shields.io/npm/v/@alemonjs/kook.svg
 [kook-p]: https://www.npmjs.com/package/@alemonjs/kook

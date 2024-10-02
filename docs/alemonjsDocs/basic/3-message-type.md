@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ## 消息创建：`message.create`
 
-```js
+```ts
 export type AEventByMessageCreate = {
   /**
    * 平台

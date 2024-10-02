@@ -65,13 +65,3 @@ const Obj = {}
 
 // 不推荐new
 ```
-
-## 模块风格
-
-```ts
-import {} from 'yunzai-mys'
-```
-
-```ts
-import {} from '@yunzai/mys'
-```

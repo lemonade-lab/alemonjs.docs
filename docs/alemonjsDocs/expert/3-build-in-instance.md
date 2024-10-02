@@ -12,38 +12,38 @@ sidebar_position: 3
 
 ### 数据 `Buffer`
 
-```js
+```ts title="apps/**/*/res.ts"
 import { BufferData } from 'chat-space'
 const BufferDB = new BufferData()
 ```
 
 - 把字符串地址转换成二维码
 
-```js
+```ts title="apps/**/*/res.ts"
 const img: Buffer | false = await BufferDB.qrcode('www.baidu.com')
 ```
 
 - 读取指定路径的图片
 
-```js
+```ts title="apps/**/*/res.ts"
 const img: Buffer | false = await BufferDB.getPath('xxx.png')
 ```
 
 - 读取指定网址的图片
 
-```js
+```ts title="apps/**/*/res.ts"
 const img: Buffer | false = await BufferDB.getUrl('https://xxxx.com/xxx.png')
 ```
 
 - 写入数据并以文件存储
 
-```js
+```ts title="apps/**/*/res.ts"
 BufferDB.set('/public/buffer.ini')
 ```
 
 - 读取文件数据
 
-```js
+```ts title="apps/**/*/res.ts"
 const img: Buffer | false = await BufferDB.get('/public/buffer.ini')
 ```
 
@@ -55,14 +55,14 @@ const img: Buffer | false = await BufferDB.get('/public/buffer.ini')
 
 同时能保持原生平台特有功能
 
-```js title="FilesServer"
+```ts title="apps/**/*/res.ts"
 import { FilesServer } from 'chat-space'
 const ClientFile = new FilesServer()
 ```
 
 - 固定文件暴露
 
-```js
+```ts title="apps/**/*/res.ts"
 const url = await ClientFile.getLocalFileUrl('/plugins/point/public/img/ionc.png')
 
 // url   http://[::]:port/api/xxx?address=/plugins/point/public/img/ionc.png
@@ -70,8 +70,8 @@ const url = await ClientFile.getLocalFileUrl('/plugins/point/public/img/ionc.png
 
 - 动态文件暴露
 
-```js
-const img : Buffer = '<buffer-img xxx >'
+```ts title="apps/**/*/res.ts"
+const img: Buffer = '<buffer-img xxx >'
 const url = await ClientFile.getFileUrl(img)
 
 // url   http://[::]:port/api/xxx/1234567890.png
@@ -81,7 +81,7 @@ const url = await ClientFile.getFileUrl(img)
 
 > 如果设备有公网地址，可通过如下方式获取
 
-```js title="获取设备公网地址"
+```ts title="apps/**/*/res.ts"
 import { IP } from 'chat-space'
 const ip:string : false = await IP.get()
 ```

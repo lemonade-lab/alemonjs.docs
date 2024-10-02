@@ -12,7 +12,7 @@ sidebar_position: 1
 
 ## 导出
 
-```js
+```js title="src/index.ts"
 import { Text, OnProcessor, AEvents, useParse, At, defineBot } from 'alemonjs'
 export default defineBot(config => {
   // 登录标准化配置

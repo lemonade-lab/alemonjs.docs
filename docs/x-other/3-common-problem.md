@@ -128,3 +128,7 @@ apt install -y --force-yes --no-install-recommends fonts-wqy-microhei
 ### 社区答案
 
 [打开 Issues](https://github.com/lemonade-lab/alemonjs/issues)
+
+### 群聊反馈
+
+AlemonJS交流群：806943302
