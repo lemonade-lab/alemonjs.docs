@@ -10,7 +10,22 @@ sidebar_position: 1
 
 :::
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 初始化环境
+
+<Tabs>
+  <TabItem value="start-a" label="使用模版" default>
+
+```sh
+npm create alemonjs@latest -y
+cd alemonb
+```
+
+  </TabItem>
+
+  <TabItem value="start-b" label="重新开始" default>
 
 ### 使用 yarn
 
@@ -55,19 +70,7 @@ export default defineChildren(config => {
 })
 ```
 
-### 启动
-
-```shell
-npx alemonjs --input src/index.ts --login "xxx"
-```
-
---input 入口文件
-
---login 即要选择登录的平台
-
-## 登录平台
-
-### 安装平台
+## 平台
 
 ```shell
 yarn add @alemonjs/kook
@@ -75,19 +78,23 @@ yarn add @alemonjs/kook
 
 > 登录平台，需要增加对应平台的关联包
 
-### 启动
+  </TabItem>
+</Tabs>
 
 ```shell
-npx tsx index.ts --login "kook" --token "xxxx"
+npx tsx index.ts --input "./src/index.ts" --login "kook" --token "xxxx"
 ```
 
---token 即登录需要的 token ，不同平台要求不同
+--input 入口文件
+
+--login 选择kook平台
+
+--token 即KOOK登录需要的 token
 
 ## 热更新配置
 
 ```yaml title="lemon.config.yaml"
 # @alemonjs/kook
-
 kook:
   token: 'xxxx'
   master_id:
@@ -95,13 +102,10 @@ kook:
     - '654321'
 # kook end
 
-# 不使用 --login 时将尝试读取此配置内容以启动机器人
-login: 'kook'
-
 # pm2
 pm2:
   name: 'kook'
-  script: 'npx tsx index.ts --login kook'
+  script: 'alemonjs start --input ./lib/index.js --login kook'
 ```
 
 ## PM2
