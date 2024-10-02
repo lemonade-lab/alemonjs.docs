@@ -118,12 +118,12 @@ export default function Footer() {
       <section className="border-t-2 border-gray-700 border-dotted"></section>
       <section className="py-6 px-4">
         <div className="text-center text-[#e5e7eb]">
-          Copyright © {new Date().getFullYear()} LEMONADE |{' '}
+          Copyright © {new Date().getFullYear()} LEMONADE |
           <span
             className=" cursor-pointer text-blue-400"
             onClick={() => window.open('https://beian.miit.gov.cn/')}
           >
-            津ICP备2023004480号{' '}
+            津ICP备2023004480号
           </span>
         </div>
       </section>

@@ -5,7 +5,7 @@ import Layout from '@theme/Layout'
 import HomepageFeatures from '@site/src/pages/HomepageFeatures'
 import Heading from '@theme/Heading'
 import styles from './index.module.css'
-import Header from './Footer'
+// import Header from './Footer'
 import TeamMemberCard from './TeamMemberCard'
 /**
  *
@@ -45,7 +45,7 @@ export default function Home(): JSX.Element {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
-      noFooter={true}
+      // noFooter={true}
     >
       <HomepageHeader />
       <main>
@@ -61,7 +61,7 @@ export default function Home(): JSX.Element {
           </div>
         </div>
       </main>
-      <Header />
+      {/* <Header /> */}
     </Layout>
   )
 }
