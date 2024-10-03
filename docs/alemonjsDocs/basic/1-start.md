@@ -21,6 +21,8 @@ import TabItem from '@theme/TabItem';
 ```sh
 npm create alemonjs@latest -y
 cd alemonb
+npm install yarn@1.19.1 -g
+yarn intall
 ```
 
   </TabItem>
