@@ -4,15 +4,18 @@ sidebar_position: 1
 
 # 功能浏览
 
+:::tip
+
 ✅ 平台拥有此接口
 
 ❌ 平台无此接口
 
 🚩 需要向平台申请
+:::
 
 ### 一、消息功能 （message）
 
-1. 操作(operation)
+### 操作(operation)
 
 - 群组 （group）
 
@@ -30,7 +33,7 @@ sidebar_position: 1
 | qq   | ✅   | ❌   | ❌   | ❌   | ❌   |
 | ntqq | ✅   | ❌   | ❌   | ❌   | ❌   |
 
-2. 提及 （mention/at）
+### 提及 （mention/at）
 
 - 群组 （group）
 
@@ -40,7 +43,7 @@ sidebar_position: 1
 | qq   | ✅   | ✅   | ✅     |
 | ntqq | 🚩   | 🚩   | ❌     |
 
-3. 富媒体 （rich media）
+### 富媒体 （rich media）
 
 - 群组 （group）
 
@@ -63,7 +66,7 @@ sidebar_position: 1
 > 控制：用户进出(频道) 控制
 > 角色: 用户分组(角色) 控制
 
-1. 管理员（admin）
+### 管理员（admin）
 
 | 平台 | 查阅 | 禁言 | 控制 | 角色 |
 | ---- | ---- | ---- | ---- | ---- |
@@ -71,7 +74,7 @@ sidebar_position: 1
 | qq   | ✅   | ✅   | ✅   | ✅   |
 | ntqq | ❌   | ❌   | ❌   | ❌   |
 
-2. 普通成员（member）
+### 普通成员（member）
 
 | 平台 | 查阅 | 禁言 | 控制 | 角色 |
 | ---- | ---- | ---- | ---- | ---- |

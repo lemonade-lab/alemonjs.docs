@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 自定义平台
 
-:::tip warning
+:::tip
 
 可以自己定义平台，平台方法很简单，也提供了统一的类型提示
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # 模块
@@ -42,7 +42,8 @@ node_modules/                 // Node.js 依赖包
 # 依赖
 node_modules
 /*
-!/src
+!/lib
+!/public
 ```
 
 ```json title="package.json"
@@ -52,13 +53,13 @@ node_modules
   "description": "xiuxian",
   "author": "ningmengchongshui",
   "type": "module",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "private": true,
-  "types": "src",
+  "types": "lib",
   "exports": {
     ".": {
-      "import": "./src/index.js",
-      "types": "./src/index.d.ts"
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
     }
   },
   "publishConfig": {
@@ -70,8 +71,7 @@ node_modules
 
 ```js title="src/index.ts"
 import { defineChildren } from 'alemonjs'
-export default defineChildren(config => {
-  console.log('config', config)
+export default defineChildren(() => {
   return {
     onCreated() {
       console.log('onCreated')

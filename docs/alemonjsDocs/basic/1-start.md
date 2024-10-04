@@ -15,12 +15,20 @@ import TabItem from '@theme/TabItem';
 
 ## 初始化环境
 
+```sh
+# 国内镜像，已安装可忽视
+npm config set registry https://registry.npmmirror.com
+```
+
 <Tabs>
-  <TabItem value="start-a" label="使用模版" default>
+  <TabItem value="start-a" label="快速开始" default>
 
 ```sh
 npm create alemonjs@latest -y
 cd alemonb
+```
+
+```sh
 npm install yarn@1.19.1 -g
 yarn intall
 ```
@@ -98,6 +106,14 @@ kook:
     - '654321'
 # kook end
 ```
+
+## 编译
+
+```sh
+npx alemonjs build --input "./src/index.ts"
+```
+
+> 输出 lib/index.js
 
 ## PM2
 
