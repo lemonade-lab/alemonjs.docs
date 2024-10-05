@@ -15,17 +15,17 @@ const FeatureList: FeatureItem[] = [
   {
     title: '简单易懂',
     imgSrc: require('@site/static/img/edt.png').default,
-    description: <>JavaScript函数式编程 </>
+    description: <> JS函数式编程 </>
   },
   {
-    title: '功能直调',
+    title: '接口简洁',
     imgSrc: require('@site/static/img/api.png').default,
-    description: <>所有平台的功能都一个样 </>
+    description: <>优雅的编程风格</>
   },
   {
     title: '敏捷开发',
     imgSrc: require('@site/static/img/post.png').default,
-    description: <>丰富的脚手架与生态环境 </>
+    description: <>现代化开发生态</>
   }
 ]
 
@@ -37,7 +37,7 @@ function Feature({ title, imgSrc, description }: FeatureItem): JSX.Element {
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3"> {title} </Heading>
-        <p> {description} </p>
+        <div className="whitespace-nowrap">{description}</div>
       </div>
     </div>
   )

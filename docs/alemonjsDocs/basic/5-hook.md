@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # 钩子
@@ -10,16 +10,16 @@ sidebar_position: 4
 
 :::
 
-Alemon.js 提供了以下几种钩子：
+AlemonJS 提供了以下几种钩子：
 
 ### `useSend`
 
-> - `useSend` 允许开发者在响应特定事件（如接收到消息）时，发送消息。
-> - 通过调用 `useSend`，开发者能够获取发送消息的功能，这种获取通常在一个特定的事件处理上下文中进行。
+> 允许开发者在响应特定事件（如接收到消息）时，发送消息。
+>
+> 这种获取通常在一个特定的事件处理上下文中进行。
 
 ```ts title="apps/**/*/res.ts"
 import { useSend, Text, At, Image } from 'alemonjs'
-
 export default OnResponse(
   async e => {
     const Send = useSend(e)
@@ -38,7 +38,7 @@ export default OnResponse(
     Send(Image(img))
 
     // 发送本地图片文件
-    Send(Image('./public/test.jpg', 'file'))
+    Send(Image('public/test.jpg', 'file'))
   },
   'message.create',
   /^(#|\/)?炼丹师学徒$/
@@ -47,12 +47,14 @@ export default OnResponse(
 
 ### `usePrase`
 
-> - `useParse` 用于解析和提取接收到的消息内容。
-> - 在特定的事件处理过程中（例如收到一条消息时），开发者可以调用 `useParse` 来获取消息的具体内容。
+> 用于解析和提取接收到的消息内容。
+>
+> 在特定的事件处理过程中（例如收到一条消息时）。
+>
+> 开发者可以获取消息的具体内容。
 
 ```ts title="apps/**/*/res.ts"
 import { useParse } from 'alemonjs'
-
 export default OnResponse(
   async e => {
     // 解析用户消息
@@ -72,7 +74,7 @@ export default OnResponse(
       return // 未找到用户ID
     }
 
-    // 处理用户ID逻辑
+    // 处理被AT的用户...
   },
   'message.create',
   /^(#|\/)?炼丹师学徒$/
@@ -85,28 +87,36 @@ export default OnResponse(
 
 ```ts title="apps/**/*/res.ts"
 import { Text, useObserver, useParse, useSend } from 'alemonjs'
-
 export default OnResponse(
   event => {
+    // 创建
     const Send = useSend(event)
     Send(Text('请输入密码'))
 
     // 创建观察者
     const Observer = useObserver(event, 'message.create')
+
     Observer(
       (event, { next }) => {
+        // 创建
         const Send = useSend(event)
         const text = useParse(event.Megs, 'Text')
-
+        // 检查
         if (text === '123456') {
           Send(Text('密码正确'))
+          // 结束
+        } else if (text == 'close') {
+          // 结束
         } else {
           Send(Text('密码不正确'))
-          next() // 继续监听下一个消息
+          // 继续监听下一个消息
+          next()
         }
       },
       ['UserId'] // 监听当前用户的下一个消息
     )
+
+    //
   },
   'message.create',
   /测试/

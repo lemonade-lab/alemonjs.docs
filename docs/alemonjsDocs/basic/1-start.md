@@ -6,7 +6,7 @@ sidebar_position: 1
 
 :::tip 提示
 
-更多详细推荐前往 Ecosystem Status 中的 npm 查看对应内容
+[更多详细推荐前往环境生态查看对应内容](/docs/intro)
 
 :::
 
@@ -15,20 +15,19 @@ import TabItem from '@theme/TabItem';
 
 ## 初始化环境
 
-```sh
-# 国内镜像，已安装可忽视
+```sh title="国内镜像，已安装可忽视"
 npm config set registry https://registry.npmmirror.com
 ```
 
 <Tabs>
   <TabItem value="start-a" label="快速开始" default>
 
-```sh
+```sh title="创建模版"
 npm create alemonjs@latest -y
 cd alemonb
 ```
 
-```sh
+```sh title="加载依赖"
 npm install yarn@1.19.1 -g
 yarn intall
 ```
@@ -76,7 +75,7 @@ export default defineChildren(config => {
 
 ## 平台
 
-```shell
+```sh tiitle="安装kook"
 yarn add @alemonjs/kook
 ```
 
@@ -85,7 +84,7 @@ yarn add @alemonjs/kook
   </TabItem>
 </Tabs>
 
-```shell
+```sh title="开发模式启动"
 npx alemonjs dev --login "kook" --token "xxxx"
 ```
 
@@ -93,25 +92,21 @@ npx alemonjs dev --login "kook" --token "xxxx"
 
 --token 即KOOK登录需要的 token
 
-```sh
---input "./src/index.ts" #默认
-```
+--input 默认`./src/index.ts`
 
 ## 热更新配置
 
 ```yaml title="lemon.config.yaml"
-# @alemonjs/kook
 kook:
   token: 'xxxx'
   master_id:
     - '123456'
     - '654321'
-# kook end
 ```
 
 ## 编译
 
-```sh
+```sh titile="编译模式运行"
 npx alemonjs build
 ```
 
@@ -126,9 +121,9 @@ yarn add pm2 -D
 ```
 
 ```yaml title="alemon.config.yaml"
-# pm2
 pm2:
   name: 'kook'
+  # 生产模式，入口可选择只向打包生产后的文件
   script: 'alemonjs start --input ./lib/index.js --login kook'
 ```
 
@@ -150,6 +145,7 @@ module.exports = {
     {
       ...app,
       env: {
+        // 确保是生产环境
         NODE_ENV: 'production',
         ...(app?.env ?? {})
       }

@@ -12,7 +12,7 @@ yarn add react-puppeteer -W
 
 ## 配置
 
-```cjs
+```cjs title=".puppeteerrc.cjs"
 /**
  * @type {import("puppeteer").Configuration}
  */
@@ -22,7 +22,6 @@ module.exports = require('react-puppeteer/.puppeteerrc')
 ## 组件
 
 ```tsx title="src/image/component/Word.tsx"
-// src/Word.tsx
 import React from 'react'
 export default ({ name }) => {
   return (
@@ -36,9 +35,8 @@ export default ({ name }) => {
 ```tsx title="src/image/index.tsx"
 import React from 'react'
 import { pictureRender, render } from 'react-puppeteer'
-import Word from './component/Word'
-export const pictureRender = (uid: number, Props: Parameters<typeof Word>[0]) => {
-  // 生成 html 地址 或 html字符串
+import Word from '@src/image/component/Word'
+export const pictureRender = (Props: Parameters<typeof Word>[0]) => {
   return render({
     // html/hello/uid.html
     join_dir: 'hello',
@@ -51,34 +49,36 @@ export const pictureRender = (uid: number, Props: Parameters<typeof Word>[0]) =>
 ## 发送
 
 ```ts title="src/apps/word/res.ts"
-import { useSend, Image } from 'alemonjs'
-import { pictureRender } from '../../image/index'
+import { useSend, Image, Text } from 'alemonjs'
+import { pictureRender } from '@/src/image/index'
 export default OnResponse(
   async event => {
-    const UID = e.event
-    const Send = useSend(event)
-    const img: Buffer = await pictureRender(UID, {
+    const UID = event.UserID
+    // pic
+    const img = await pictureRender(UID, {
       name: 'Hello Word !'
     })
-    Send(Image(img))
+    // 创建
+    const Send = useSend(event)
+    if (typeof img == 'boolean') {
+      Send(Text('生产失败'))
+    } else {
+      Send(Image(img))
+    }
   },
   'message.create',
-  /^(#|\/)?炼丹师学徒$/
+  /pic/
 )
 ```
 
-## 热重启
-
-```sh
-npx tsxp dev
-```
+## 调试
 
 ```tsx title="tsxp.config.tsx"
 import React from 'react'
 import { join } from 'path'
 import { defineConfig } from 'react-puppeteer'
 import { readFileSync } from 'fs'
-import Word from '@src/image/conpomnent/Hello'
+import Word from '@src/image/conpomnent/Word'
 export default defineConfig([
   {
     url: '/word',
@@ -89,13 +89,21 @@ export default defineConfig([
 ])
 ```
 
-```sh
+```sh title="使用非模块文件加载"
 NODE_OPTIONS='--loader alemonjs/loader --no-warnings' npx tsxp dev
 ```
 
-> 若使用了别名和装载，必须设置loader
+```sh title="不使用非模块文件加载"
+npx tsxp dev
+```
 
-## CSS扩展
+## CSS
+
+:::info
+
+后续版本内置并简化操作步骤
+
+:::
 
 ### 安装
 
@@ -194,7 +202,7 @@ const startCssPost = (input, output) => {
 startCssPost('src/input.css', 'public/output.css')
 ```
 
-```ts
+```ts title="src/image/index.tsx"
 import React from 'react'
 import { render, LinkCSS } from 'react-puppeteer'
 // 引入生产文件。
@@ -214,17 +222,14 @@ export const pictureRender = () => {
 
 ```
 
-- 浏览器服务器
-
-```sh
+```sh title="启动调试"
 npx tsx src/postcss.ts --css-server
 ```
 
-- 开发/构建时
+### 开发/构建
 
 ```ts title="alemon.config.ts"
-//
-import './src/postcss.js'
+import './src/postcss.js' // 确保先执行并匹配进程参数
 export default defineConfig({
   build: {
     plugins: []
@@ -232,10 +237,10 @@ export default defineConfig({
 })
 ```
 
-```sh
-npx alemonjs build --css-watch # 监听
+```sh title="监听"
+npx alemonjs dev --css-watch
 ```
 
-```sh
-npx alemonjs build --css-minify # 压缩
+```sh title="压缩"
+npx alemonjs build --css-minify
 ```

@@ -4,13 +4,13 @@ sidebar_position: 4
 
 # 模块
 
-:::warning
+:::info
 
-实验性功能
+使用第三方模块或打包模块至npm平台
 
 :::
 
-## 使用包
+## 使用
 
 定义apps变量，并添加包
 
@@ -25,7 +25,7 @@ alemonjs 会根据配置去找对应的 package.json。
 
 以入口文件的目录为工程目录，收集子目录 apps 内的所有模块
 
-```shell title="目录结构"
+```shell title="大致的目录结构"
 node_modules/                 // Node.js 依赖包
  ├── @alemonjs/               // AlemonJS 相关模块
  │    └── xixian/             // xixian 模块
@@ -36,7 +36,7 @@ node_modules/                 // Node.js 依赖包
  └── alemon.config.yaml       // 机器运行配置文件
 ```
 
-## 配置
+## 发布
 
 ```yaml title=".npmignore"
 # 依赖
@@ -68,13 +68,14 @@ node_modules
 }
 ```
 
-```js title="src/index.ts"
-import { defineChildren } from 'alemonjs'
-export default defineChildren(() => {
-  return {
-    onCreated() {
-      console.log('onCreated')
-    }
-  }
-})
+```sh title="登录"
+npm login
+```
+
+```sh title="本地"
+npm pack
+```
+
+```sh title="发布"
+npm publish
 ```

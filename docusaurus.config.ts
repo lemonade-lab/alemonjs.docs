@@ -10,9 +10,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 const defineConfig = (config: Config) => config
 
 const number = '津ICP备2023004480号'
-const icon =
-  '<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>'
-const link = `<a class="footer__link-item navbar__item" href="https://beian.miit.gov.cn/" target="_blank"> ${number} ${icon} </a>`
+const link = `<a class="footer__link-item navbar__item" href="https://beian.miit.gov.cn/" target="_blank">${number}</a>`
 
 export default defineConfig({
   title: 'AlemonJS',
@@ -52,29 +50,29 @@ export default defineConfig({
       items: [
         {
           position: 'left',
-          label: 'Dev DOCS',
+          label: '文档',
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar'
         },
         {
           position: 'left',
-          label: 'Edit DOCS',
+          label: '编辑',
           href: 'https://github.com/lemonade-lab/alemonjs-docs/blob/main/docs/intro.md'
         },
         {
           position: 'right',
           href: 'https://github.com/lemonade-lab',
-          label: 'Lemonade-lab'
+          label: '团队'
         },
         {
           position: 'right',
-          href: 'https://github.com/lemonade-lab/create-alemonjs//blob/main/README.md',
-          label: 'Template'
+          href: 'https://github.com/lemonade-lab/alemonjs/tree/main/packages/create-alemonjs/bin/template',
+          label: '开发模版'
         },
         {
           position: 'right',
           href: 'https://github.com/lemonade-lab/alemonjs',
-          label: 'AlemonJS Code'
+          label: '源码'
         }
       ]
     },
@@ -98,8 +96,12 @@ export default defineConfig({
           title: '社区',
           items: [
             {
-              label: 'lemonade-lab',
+              label: '团队',
               href: 'https://github.com/lemonade-lab'
+            },
+            {
+              label: 'Q群',
+              href: 'https://qm.qq.com/q/aZYMNqUQc'
             }
           ]
         },
@@ -117,7 +119,7 @@ export default defineConfig({
           ]
         }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} LEMONADE | ${link}`
+      copyright: `<span>Copyright © ${new Date().getFullYear()} LEMONADE </span>${link}`
     },
     prism: {
       theme: prismThemes.github,
