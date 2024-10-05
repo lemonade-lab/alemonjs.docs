@@ -10,6 +10,22 @@ AlemonJS已内置,且非该框架应用也能通过参数配置使用该功能
 
 :::
 
+## 创建配置
+
+```ts title="alemon.config.ts"
+import { defineConfig } from 'alemonjs'
+import { files } from 'alemonjs/plugins'
+export default defineConfig({
+  build: {
+    plugins: [files({ filter: /\.(png|jpg|css)$/ })]
+  }
+})
+```
+
+```ts title="src/end.d.ts"
+/// <reference types="alemonjs/env" />
+```
+
 ## 非模块导入
 
 ```ts
