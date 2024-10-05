@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # 别名
@@ -19,7 +19,7 @@ export default defineConfig({
       alias({
         entries: [
           { find: '@public', replacement: join(__dirname, 'public') },
-          { find: '@', replacement: join(__dirname, 'src') }
+          { find: '@src', replacement: join(__dirname, 'src') }
         ]
       })
     ]
@@ -34,7 +34,7 @@ export default defineConfig({
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
+      "@src/*": ["src/*"],
       "@public/*": ["public/*"]
     }
   },

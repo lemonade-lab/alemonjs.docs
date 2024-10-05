@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # 模块
@@ -53,8 +53,7 @@ node_modules
   "description": "xiuxian",
   "author": "ningmengchongshui",
   "type": "module",
-  "main": "lib/index.js",
-  "private": true,
+  "main": "lib/index.js", // 必须的
   "types": "lib",
   "exports": {
     ".": {

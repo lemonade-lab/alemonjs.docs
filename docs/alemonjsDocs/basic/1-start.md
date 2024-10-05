@@ -86,14 +86,16 @@ yarn add @alemonjs/kook
 </Tabs>
 
 ```shell
-npx alemonjs dev --input "./src/index.ts" --login "kook" --token "xxxx"
+npx alemonjs dev --login "kook" --token "xxxx"
 ```
-
---input 入口文件
 
 --login 选择kook平台
 
 --token 即KOOK登录需要的 token
+
+```sh
+--input "./src/index.ts" #默认
+```
 
 ## 热更新配置
 
@@ -110,10 +112,10 @@ kook:
 ## 编译
 
 ```sh
-npx alemonjs build --input "./src/index.ts"
+npx alemonjs build
 ```
 
-> 输出 lib/index.js
+> 输出目录 lib
 
 ## PM2
 
