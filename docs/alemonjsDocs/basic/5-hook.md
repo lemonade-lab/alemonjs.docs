@@ -38,10 +38,10 @@ export default OnResponse(
     Send(Image(img))
 
     // 发送本地图片文件
-    Send(Image('public/test.jpg', 'file'))
+    Send(Image('src/assets/img/test.jpg', 'file'))
   },
   'message.create',
-  /^(#|\/)?炼丹师学徒$/
+  /^(#|\/)?你好$/
 )
 ```
 
@@ -77,7 +77,7 @@ export default OnResponse(
     // 处理被AT的用户...
   },
   'message.create',
-  /^(#|\/)?炼丹师学徒$/
+  /^(#|\/)?你好$/
 )
 ```
 
@@ -107,6 +107,7 @@ export default OnResponse(
           // 结束
         } else if (text == 'close') {
           // 结束
+          Send(Text('取消登录'))
         } else {
           Send(Text('密码不正确'))
           // 继续监听下一个消息
@@ -119,6 +120,6 @@ export default OnResponse(
     //
   },
   'message.create',
-  /测试/
+  /登录/
 )
 ```

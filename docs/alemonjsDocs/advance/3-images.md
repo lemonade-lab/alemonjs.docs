@@ -110,11 +110,9 @@ export default {
 ### postcss
 
 ```js title="postcss.config.cjs"
-const args = [...process.argv.slice(2)]
-const plugins = args.includes('--css-minify') ? { cssnano: { preset: 'default' } } : {}
 module.exports = {
   plugins: {
-   // 允许使用import导入css文件
+    // 允许使用import导入css文件
     'postcss-import': {},
     // 允许使用嵌套语法
     'postcss-simple-vars': {},
@@ -128,8 +126,6 @@ module.exports = {
     'postcss-url': {
       url: 'inline'
     }
-    // ...
-    ...plugins
   }
 }
 ```

@@ -29,7 +29,7 @@ cd alemonb
 
 ```sh title="加载依赖"
 npm install yarn@1.19.1 -g
-yarn intall
+yarn install
 ```
 
   </TabItem>

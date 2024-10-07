@@ -14,7 +14,7 @@ sidebar_position: 2
       "@src/*": ["src/*"]
     }
   },
-  "include": ["src/**/*", "public/**/*"],
+  "include": ["src/**/*"],
   "extends": "alemonjs/tsconfig.json"
 }
 ```

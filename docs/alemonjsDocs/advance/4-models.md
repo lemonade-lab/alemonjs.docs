@@ -31,9 +31,8 @@ node_modules/                 // Node.js 依赖包
  │    └── xixian/             // xixian 模块
  │         ├── lib/           // 源代码目录
  │         │    ├── apps/     // 开发应用
- │         │    └── index.ts  // 文件入口
+ │         │    └── index.js  // 文件入口
  │         └── package.json   // 工程配置文件
- └── alemon.config.yaml       // 机器运行配置文件
 ```
 
 ## 发布
@@ -43,7 +42,6 @@ node_modules/                 // Node.js 依赖包
 node_modules
 /*
 !/lib
-!/public
 ```
 
 ```json title="package.json"
