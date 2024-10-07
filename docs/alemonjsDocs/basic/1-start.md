@@ -156,6 +156,6 @@ module.exports = {
 
 ### 启动
 
-```shell
+```sh
 npx pm2 start --config pm2.condig.cjs
 ```

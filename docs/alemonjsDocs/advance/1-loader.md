@@ -32,7 +32,8 @@ import { defineConfig } from 'alemonjs'
 import { files } from 'alemonjs/plugins'
 export default defineConfig({
   build: {
-    plugins: [files({ filter: /\.(png|jpg|css)$/ })]
+    // 请不要拦截css和scss文件，alemonjs已内置处理
+    plugins: [files({ filter: /\.(png|jpg)$/ })]
   }
 })
 ```
@@ -40,22 +41,15 @@ export default defineConfig({
 ## loader
 
 ```sh title="支持在非alemonjs环境中使用本文功能"
+node --loader alemonjs/loader --no-warnings index.js
+# or
 NODE_OPTIONS='--loader alemonjs/loader --no-warnings' node index.js
 ```
 
-```sh title="支持在非alemonjs环境中使用本文功能"
-node --loader alemonjs/loader --no-warnings index.js
-```
-
 ```sh title="禁用非模块文件加载"
-nxp alemonjs dev --esms-no-import
+nxp alemonjs dev --no-import-assets
 ```
 
-```sh title="覆盖配置"
-nxp alemonjs dev --esms-image-import “/.(png|jpg|ico)/”
-nxp alemonjs dev --esms-css-import “/.(css|scss)/”
-nxp alemonjs dev --esms-vidoe-import “/.(mp4|webm)/”
-nxp alemonjs dev --esms-aodio-import “/.(mp4|webm)/”
-nxp alemonjs dev --esms-font-import “/.(woff|ttf)/”
-nxp alemonjs dev --esms-files-import “/.(ma)/”
+```sh title="禁用postcss预处理"
+nxp alemonjs dev --no-import-css
 ```

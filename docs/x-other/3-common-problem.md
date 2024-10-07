@@ -72,7 +72,7 @@ node -e "console.log(v8.getHeapStatistics().heap_size_limit / 1024 / 1024)"
 
 需要修改 `.puppeteerrc.cjs`
 
-```cjs
+```js
 const cfg = require('react-puppeteer/.puppeteerrc')
 
 // 输入浏览器绝对路径

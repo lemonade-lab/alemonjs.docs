@@ -11,8 +11,7 @@ sidebar_position: 2
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["src/*"],
-      "@public/*": ["public/*"]
+      "@src/*": ["src/*"]
     }
   },
   "include": ["src/**/*", "public/**/*"],
@@ -25,7 +24,7 @@ sidebar_position: 2
 ```ts
 import { readFileSync } from 'fs'
 // 得到该文件的绝对路径，类型 string
-import img_logo from '@public/img/logo.png'
+import img_logo from '@src/asstes/img/logo.png'
 const data = readFileSync(img_logo, 'utf-8')
 ```
 
@@ -42,10 +41,7 @@ export default defineConfig({
   build: {
     plugins: [
       alias({
-        entries: [
-          { find: '@public', replacement: join(__dirname, 'public') },
-          { find: '@src', replacement: join(__dirname, 'src') }
-        ]
+        entries: [{ find: '@src', replacement: join(__dirname, 'src') }]
       })
     ]
   }
