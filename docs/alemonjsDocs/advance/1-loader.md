@@ -50,6 +50,14 @@ NODE_OPTIONS='--loader alemonjs/loader --no-warnings' node index.js
 nxp alemonjs dev --no-import-assets
 ```
 
+```sh title="替换assets匹配规则"
+nxp alemonjs dev --import-assets "/^.(pm3|jpg|png|svg|icon)/"
+```
+
 ```sh title="禁用postcss预处理"
 nxp alemonjs dev --no-import-css
+```
+
+```sh title="替换css匹配规则"
+nxp alemonjs dev --import-css "/^.(css|scss|less)/"
 ```

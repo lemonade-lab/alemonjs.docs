@@ -157,5 +157,14 @@ module.exports = {
 ### 启动
 
 ```sh
-npx pm2 start --config pm2.condig.cjs
+# start
+npx pm2 startOrRestart pm2.config.cjs
+# stop
+npx pm2 stop pm2.config.cjs
+# delete
+npx pm2 delete pm2.config.cjs
+# kill
+npx pm2 kill
+# logs
+npx pm2 logs
 ```
