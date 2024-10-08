@@ -168,24 +168,3 @@ npx pm2 kill
 # logs
 npx pm2 logs
 ```
-
-## 入口
-
-```ts title="src/index.ts"
-export default defineChildren(() => {
-  return {
-    onCreated() {
-      console.log('[@alemonjs/test]')
-    }
-  }
-})
-```
-
-```ts title="src/index.ts"
-import { getConfig, getIoRedis } from 'alemonjs'
-const cfg = getConfig()
-console.log('alemon.config.yaml', config.value)
-console.log('alemonjs package.json', config.package)
-const ioRedis = getIoRedis()
-// ioRedis.set("alemonjs:user","xxx")
-```

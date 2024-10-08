@@ -14,14 +14,10 @@ sidebar_position: 1
 
 ```js title="src/index.ts"
 import { Text, OnProcessor, AEvents, useParse, At } from 'alemonjs'
-import { getConfig, getIoRedis } from 'alemonjs'
 import { defineBot } from 'alemonjs';
 export default defineBot(() => {
-  const cfg = getConfig()
-  console.log('config', config.value)
-  console.log("package",config.package)
-
   // 创建实例后。
+
   // 返回其接口设计。
 
   // 返回处理标准对象
