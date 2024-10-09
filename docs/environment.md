@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 环境准备
+# 前置条件
 
 :::warning 注意事项
 

@@ -1,46 +1,42 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
-# 如何开始
+# 快速开始
 
 :::tip 提示
 
 [更多详细推荐前往环境生态查看对应内容](/docs/intro)
+
+[如果未进行环境部署，请进行环境准备工作](/docs/environment)
 
 :::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## 初始化环境
+## 初始化
 
 ```sh title="国内镜像，已安装可忽视"
 npm config set registry https://registry.npmmirror.com
+```
+
+```sh title="文档统一采用yarn依赖工具"
+npm install yarn@1.19.1 -g
+yarn install
 ```
 
 <Tabs>
   <TabItem value="start-a" label="快速开始" default>
 
 ```sh title="创建模版"
-npm create alemonjs@latest -y
+npm create alemonjs
 cd alemonb
-```
-
-```sh title="加载依赖"
-npm install yarn@1.19.1 -g
-yarn install
 ```
 
   </TabItem>
 
   <TabItem value="start-b" label="重新开始" default>
-
-### 使用 yarn
-
-```shell
-npm install yarn@1.19.1 -g
-```
 
 ### 配置环境
 
@@ -51,11 +47,9 @@ npm install yarn@1.19.1 -g
 }
 ```
 
-> 暂未支持paths别名系统
+### 安装框架
 
-### 安装AlemonJS
-
-```shell
+```shell title="添加"
 yarn add alemonjs@2 -W
 ```
 
@@ -63,8 +57,7 @@ yarn add alemonjs@2 -W
 
 ```ts title="./src/index.ts"
 import { defineChildren } from 'alemonjs'
-export default defineChildren(config => {
-  console.log('本地开发测试启动', config)
+export default defineChildren(() => {
   return {
     onCreated() {
       console.log('onCreated')
@@ -94,7 +87,7 @@ npx alemonjs dev --login "kook" --token "xxxx"
 
 --input 默认`./src/index.ts`
 
-## 热更新配置
+## 配置
 
 ```yaml title="lemon.config.yaml"
 kook:

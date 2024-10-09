@@ -4,6 +4,12 @@ sidebar_position: 2
 
 # 别名
 
+:::info
+
+简化和统一导入格式
+
+:::
+
 ## 提示
 
 ```json title="ts.config.json"

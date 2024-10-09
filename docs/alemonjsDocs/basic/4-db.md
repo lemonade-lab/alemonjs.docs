@@ -1,8 +1,14 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 ---
 
 # 数据
+
+:::info
+
+Redis配置及调用
+
+:::
 
 ```yaml title="lemon.config.yaml"
 redis:

@@ -24,11 +24,11 @@ const HomepageHeader = () => {
           <p className={styles.homeDescription}>{siteConfig.tagline}</p>
           <div className={styles.homeButtonDiv}>
             <p className={styles.homeButtons}>
-              <Link className={clsx(styles.homeButton, styles.primary)} to="docs/category/开发文档">
-                💡 开发文档
-              </Link>
               <Link className={clsx(styles.homeButton, styles.secondary)} to="docs/intro">
                 ℹ️ 介绍
+              </Link>
+              <Link className={clsx(styles.homeButton, styles.primary)} to="docs/start">
+                💡 开始
               </Link>
             </p>
           </div>

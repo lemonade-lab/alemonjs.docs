@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 ---
 
 # 钩子
@@ -21,8 +21,8 @@ AlemonJS 提供了以下几种钩子：
 ```ts title="apps/**/*/res.ts"
 import { useSend, Text, At, Image } from 'alemonjs'
 export default OnResponse(
-  async e => {
-    const Send = useSend(e)
+  event => {
+    const Send = useSend(event)
 
     // 发送文本
     Send(Text('Hello World!'))
@@ -56,14 +56,14 @@ export default OnResponse(
 ```ts title="apps/**/*/res.ts"
 import { useParse } from 'alemonjs'
 export default OnResponse(
-  async e => {
+  event => {
     // 解析用户消息
-    const text = useParse(e.Msgs, 'Text')
+    const text = useParse(event.Msgs, 'Text')
     if (!text) {
       return // 消息为空
     }
 
-    const ats = useParse(e.Msgs, 'At')
+    const ats = useParse(event.Msgs, 'At')
     if (!ats || ats.length === 0) {
       return // @ 提及为空
     }

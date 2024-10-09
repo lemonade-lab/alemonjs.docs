@@ -4,6 +4,12 @@ sidebar_position: 5
 
 # 配置
 
+:::info
+
+读取框架配置
+
+:::
+
 ```yaml title="lemon.config.yaml"
 kook:
   token: 'xxxx'

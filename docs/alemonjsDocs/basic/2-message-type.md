@@ -1,8 +1,14 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 ---
 
-# 事件类型
+# 类型
+
+:::info
+
+所以事件类型注释
+
+:::
 
 ## 公共消息创建
 
