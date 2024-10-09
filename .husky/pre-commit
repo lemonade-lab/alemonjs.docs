@@ -1,5 +1,11 @@
 # 格式化代码
+
 npm run format
 
 # 检查一致性
+
 npm run check-format
+
+# 尝试打包
+
+npm run build

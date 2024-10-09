@@ -87,8 +87,8 @@ export default defineConfig({
               to: '/docs/intro'
             },
             {
-              label: '开发文档',
-              to: '/docs/category/开发文档'
+              label: '开始',
+              to: '/docs/start'
             }
           ]
         },
