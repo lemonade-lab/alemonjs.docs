@@ -30,7 +30,7 @@ const teamMembers: TeamMember[] = [
     githubUrl: 'https://github.com/CCCdk'
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/59494182?v=4',
+    avatar: 'https://avatars.githubusercontent.com/u/168339714?v=4',
     name: 'lyyy-x',
     role: '前端',
     githubUrl: 'https://github.com/lyyy-x'
