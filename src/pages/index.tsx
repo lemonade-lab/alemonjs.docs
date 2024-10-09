@@ -6,6 +6,7 @@ import HomepageFeatures from '@site/src/pages/HomepageFeatures'
 import Heading from '@theme/Heading'
 import styles from '@site/src/pages/index.module.css'
 import TeamMemberCard from '@site/src/pages/TeamMemberCard'
+import Translate from '@docusaurus/Translate'
 /**
  *
  * @returns
@@ -20,14 +21,16 @@ const HomepageHeader = () => {
           <Heading as="h1" className={styles.homeTitle}>
             {siteConfig.title}
           </Heading>
-          <p className={styles.homeDescription}>{siteConfig.tagline}</p>
+          <p className={styles.homeDescription}>
+            <Translate>阿柠檬，基于 JavaScript 所构建的跨聊天平台开发框架</Translate>
+          </p>
           <div className={styles.homeButtonDiv}>
             <p className={styles.homeButtons}>
               <Link className={clsx(styles.homeButton, styles.secondary)} to="docs/intro">
-                ℹ️ 介绍
+                <Translate>ℹ️ 介绍</Translate>
               </Link>
               <Link className={clsx(styles.homeButton, styles.primary)} to="docs/start">
-                💡 开始
+                <Translate>💡 开始</Translate>
               </Link>
             </p>
           </div>
@@ -53,7 +56,7 @@ export default function Home(): JSX.Element {
         </div>
         <div className={clsx(styles.teamSection)}>
           <Heading as="h1" className="text--center">
-            我们的团队
+            <Translate>我们的团队</Translate>
           </Heading>
           <div className="container-max">
             <TeamMemberCard />

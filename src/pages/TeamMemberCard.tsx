@@ -31,9 +31,9 @@ const teamMembers: TeamMember[] = [
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/59494182?v=4',
-    name: 'yyy-x',
+    name: 'lyyy-x',
     role: '前端',
-    githubUrl: 'https://github.com/yyy-x'
+    githubUrl: 'https://github.com/lyyy-x'
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/116153548?v=4',

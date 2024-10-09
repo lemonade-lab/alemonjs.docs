@@ -2,41 +2,41 @@
 sidebar_position: 2
 ---
 
-# 类型
+# Type
 
 :::info
 
-所有事件类型注释
+All events type notes
 
 :::
 
-## 公共消息创建
+## Create public message
 
 ```ts title="message.create"
 export type AEventByMessageCreate = {
-  // 平台
+  // platform
   Platform: string
-  // 服务器ID
+  // Server ID
   GuildId: string
-  // 频道ID
+  // Channel ID
   ChannelId: string
-  // 是否是主人，是则ture
+  // Whether it is the master, when it is, to be true
   IsMaster: boolean
-  // 消息内容
+  // THe message content
   UserId: string
-  // 用户名
+  // User name
   UserName: string
-  // 用户头像地址
+  // User avatar address
   UserAvatar: string
-  // 消息ID
+  // Message ID
   MsgId: string
-  // 消息内容
+  // Content
   Megs: any[]
-  // 开放平台 ID
+  // Open ID
   OpenID: string
-  // 创建时间
+  // Creation time
   CreateAt: number
-  // 捕获原始消息格式
+  // Capture the original message format
   value: any
 }
 ```

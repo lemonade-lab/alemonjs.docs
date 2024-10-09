@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import { useInView } from 'react-intersection-observer'
 import { useEffect, useState } from 'react'
+import Translate from '@docusaurus/Translate'
 
 /**
  *
@@ -42,7 +43,7 @@ export default function Footer() {
                     'animate__fadeOut opacity-0': !isView1
                   })}
                 >
-                  基于 JavaScript 所构建的跨平台开发框架
+                  <Translate>基于 JavaScript 所构建的跨平台开发框架</Translate>
                 </div>
               </div>
             </div>
@@ -58,14 +59,16 @@ export default function Footer() {
                   'animate__fadeOut opacity-0': !isView1
                 })}
               >
-                <div className="font-bold text-xl text-white mb-5">教程</div>
+                <div className="font-bold text-xl text-white mb-5">
+                  <Translate>教程</Translate>
+                </div>
                 <ul>
                   <div>
                     <span
                       className=" text-white cursor-pointer hover:text-blue-400"
                       onClick={() => (window.location.href = '/docs/intro')}
                     >
-                      简介
+                      <Translate>简介</Translate>
                     </span>
                   </div>
                   <div>
@@ -73,7 +76,7 @@ export default function Footer() {
                       className=" text-white cursor-pointer hover:text-blue-400"
                       onClick={() => (window.location.href = '/docs/category/开发文档')}
                     >
-                      开发文档
+                      <Translate>开发文档</Translate>
                     </span>
                   </div>
                 </ul>
@@ -87,7 +90,9 @@ export default function Footer() {
                   'animate__fadeOut opacity-0': !isView1
                 })}
               >
-                <div className="font-bold text-xl text-white mb-5">更多</div>
+                <div className="font-bold text-xl text-white mb-5">
+                  <Translate>更多</Translate>
+                </div>
                 <ul>
                   <div>
                     <span

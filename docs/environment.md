@@ -37,15 +37,15 @@ git --version
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-```bash title="添加环境环境"
+```bash title="添加环境变量"
 echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.bash_profile
 ```
 
-```bash title="添加环境环境"
+```bash title="添加环境变量"
 echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.zshrc
 ```
 
-```bash title="刷新环境"
+```bash title="重载环境变量"
 source ~/.bash_profile && source ~/.zshrc
 ```
 
@@ -96,7 +96,7 @@ sudo apt install curl -y
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 ```
 
-```sh title="添加NVM环境环境"
+```sh title="添加NVM到环境变量"
 echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc
 echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc
 source ~/.bashrc
@@ -134,7 +134,7 @@ sudo yum install curl -y
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 ```
 
-```sh title="添加NVM环境环境"
+```sh title="添加NVM到环境变量"
 echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc
 echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc
 source ~/.bashrc # 刷新环境
