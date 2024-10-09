@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+show_giscus: 1
 ---
 
 # 快速开始

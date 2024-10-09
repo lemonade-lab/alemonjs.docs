@@ -4,9 +4,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Layout from '@theme/Layout'
 import HomepageFeatures from '@site/src/pages/HomepageFeatures'
 import Heading from '@theme/Heading'
-import styles from './index.module.css'
-// import Header from './Footer'
-import TeamMemberCard from './TeamMemberCard'
+import styles from '@site/src/pages/index.module.css'
+import TeamMemberCard from '@site/src/pages/TeamMemberCard'
 /**
  *
  * @returns

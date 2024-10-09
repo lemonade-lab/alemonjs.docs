@@ -27,11 +27,11 @@ export default defineConfig({
   },
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/lemonade-lab/alemonjs-docs/tree/main/'
+          editUrl: 'https://github.com/lemonade-lab/alemonjs-docs'
         },
         theme: {
           customCss: './src/css/custom.css'

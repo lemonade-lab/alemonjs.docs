@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './teamMemberCard.styles.module.css'
+import styles from '@site/src/pages/teamMemberCard.styles.module.css'
 
 // 定义团队成员信息的类型
 interface TeamMember {
