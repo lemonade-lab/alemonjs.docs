@@ -14,7 +14,7 @@ sidebar_position: 4
 
 定义apps变量，并添加包
 
-```yaml title="lemon.config.yaml"
+```yaml title="alemon.config.yaml"
 apps:
   - '@alemonjs/xiuxian'
 ```

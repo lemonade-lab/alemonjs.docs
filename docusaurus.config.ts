@@ -14,7 +14,7 @@ const link = `<a class="footer__link-item navbar__item" href="https://beian.miit
 
 export default defineConfig({
   title: 'AlemonJS',
-  tagline: '阿柠檬，基于 JavaScript 所构建的跨平台开发框架',
+  tagline: '阿柠檬，基于 JavaScript 所构建的跨聊天平台开发框架',
   url: 'https://alemonjs.com',
   baseUrl: '/',
   organizationName: 'lemonade-lab',

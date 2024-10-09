@@ -6,7 +6,7 @@ sidebar_position: 1
 
 :::tip AlemonJS
 
-[AlemonJS](https://github.com/lemonade-lab/alemonjs) ( 发音为 /əˈlemən/ )是事件驱动的跨平台开发框架
+[AlemonJS](https://github.com/lemonade-lab/alemonjs) ( 发音为 /əˈlemən/ ) 基于 JavaScript 所构建的跨聊天平台开发框架
 
 :::
 
